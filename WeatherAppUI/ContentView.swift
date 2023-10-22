@@ -60,8 +60,9 @@ struct WeatherDayView: View {
             Text(dayofWeek)
                 .font(.system(size: 16, weight: .medium, design: .default))
                 .foregroundColor(.white)
+
             Image(systemName: imageName)
-                .renderingMode(.original)
+                .symbolRenderingMode(.multicolor)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
@@ -80,6 +81,10 @@ struct BackgroundView: View {
         
         LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea()
+        
+//        ContainerRelativeShape()
+//            .fill(isNight ? Color.black.gradient : Color.blue.gradient)
+//            .ignoresSafeArea()
     }
 }
 
